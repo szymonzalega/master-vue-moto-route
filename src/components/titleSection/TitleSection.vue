@@ -1,7 +1,8 @@
+
+
 <template>
   <div class="title-section">
       <span class="title-section__title">{{text}}</span>
-      <!-- {buttons && <div class="title-section__buttons">{buttons()}</div>} -->
     </div>
 </template>
 
@@ -12,7 +13,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .title-section {
   width: 100%;
@@ -33,3 +33,6 @@ export default {
   }
 }
 </style>
+
+
+

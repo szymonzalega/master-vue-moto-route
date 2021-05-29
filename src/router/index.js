@@ -1,11 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import { MdButton } from 'vue-material/dist/components'
-import 'vue-material/dist/vue-material.min.css'
 
 Vue.use(VueRouter)
-Vue.use(MdIcon)
 
 const routes = [
   {
