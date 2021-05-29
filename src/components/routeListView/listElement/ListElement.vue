@@ -3,6 +3,7 @@
     class="list-element"
     activeclass="list-element--selected"
     data-testid="list-element"
+    v-on:click="selectRoute"
   >
     <div class="list-element__title">
       <span data-testid="route-name">{{ route.name }}</span>
@@ -37,6 +38,7 @@
 import EqualizerIcon from "vue-material-design-icons/Equalizer.vue";
 import ChartTimelineVariantIcon from "vue-material-design-icons/ChartTimelineVariant.vue";
 import PanoramaIcon from "vue-material-design-icons/Panorama.vue";
+import router from "../../../router";
 
 export default {
   name: "ListElement",
@@ -45,6 +47,12 @@ export default {
     EqualizerIcon,
     ChartTimelineVariantIcon,
     PanoramaIcon,
+  },
+  methods: {
+    selectRoute() {
+      console.log(this.route.id);
+      router.push({ path: `/details/${this.route.id}` });
+    },
   },
 };
 </script>

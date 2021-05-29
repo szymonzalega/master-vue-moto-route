@@ -10,6 +10,7 @@
 import TitleSection from "@/components/titleSection/TitleSection.vue";
 import HeaderSection from "@/components/routeListView/headerSection/HeaderSection.vue";
 import RouteList from "@/components/routeListView/routeList/RouteList.vue";
+import { getRoutes } from "../../services/routeService";
 
 export default {
   name: "RouteListView",
@@ -18,27 +19,24 @@ export default {
     HeaderSection,
     RouteList,
   },
+  created() {
+    this.fetchData();
+  },
   data: () => {
     return {
-      routes: [
-        {
-          id: 1,
-          name: "lalala",
-          description: "lorem ipsum",
-          type: "sport",
-          length: 122,
-          level: "medium",
-        },
-        {
-          id: 2,
-          name: "asdasdasdasd",
-          description: "lorem iasdasasfadsfasdfpsum",
-          type: "sport",
-          length: 2323,
-          level: "medium",
-        },
-      ],
+      loading: false,
+      post: null,
+      error: null,
+      routes: [],
     };
+  },
+  methods: {
+    async fetchData() {
+      this.error = this.post = null;
+      this.loading = true;
+      this.routes = await getRoutes();
+      console.log(this.routes);
+    },
   },
 };
 </script>
