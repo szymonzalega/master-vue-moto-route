@@ -1,6 +1,6 @@
 <template>
   <div data-testid="header-section" class="header-section">
-      <!-- <Button
+    <!-- <Button
         data-testid="add-new-route-button"
         onClick={handleAddNewRoute}
         variant="outlined"
@@ -8,15 +8,21 @@
         size="large"
         startIcon={<AddIcon />}
       >
+      
         Add new route
       </Button> -->
-      Header section
-    </div>
+    <button v-on:click="addNewRoute">Add new route</button>
+  </div>
 </template>
 
 <script>
 export default {
   name: "HeaderSection",
+  methods: {
+    addNewRoute() {
+      
+    },
+  },
 };
 </script>
 
@@ -39,5 +45,4 @@ export default {
     border: 1px solid #f10404;
   }
 }
-
 </style>

@@ -10,7 +10,6 @@
 import TitleSection from "@/components/titleSection/TitleSection.vue";
 import HeaderSection from "@/components/routeListView/headerSection/HeaderSection.vue";
 import RouteList from "@/components/routeListView/routeList/RouteList.vue";
-import { getRoutes } from "../../services/routeService";
 
 export default {
   name: "RouteListView",
@@ -32,10 +31,8 @@ export default {
   },
   methods: {
     async fetchData() {
-      this.error = this.post = null;
-      this.loading = true;
-      this.routes = await getRoutes();
-      console.log(this.routes);
+      const routes = await this.$store.dispatch("getRoutes");
+      this.routes = routes;
     },
   },
 };

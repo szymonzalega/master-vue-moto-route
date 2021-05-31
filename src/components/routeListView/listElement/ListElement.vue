@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     selectRoute() {
-      console.log(this.route.id);
+    //   console.log(this.route.id);
       router.push({ path: `/details/${this.route.id}` });
     },
   },
