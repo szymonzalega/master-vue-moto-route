@@ -6,14 +6,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0,
     routes: []
   },
   mutations: {
     setRoutes(state, routes) {
       state.routes = routes
     },
-
   },
   getters: {
     getRouteById: state => id => {

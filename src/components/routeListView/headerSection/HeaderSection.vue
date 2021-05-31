@@ -16,11 +16,13 @@
 </template>
 
 <script>
+import router from "../../../router";
+
 export default {
   name: "HeaderSection",
   methods: {
     addNewRoute() {
-      
+      router.push({ path: `/add` });
     },
   },
 };
